@@ -147,8 +147,9 @@ h1 {
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 3px;
-    color: #333;   
+    /* color: #333;    */
     text-align: center;
+    color: orange;
 }
 
 h2 {
