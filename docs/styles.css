@@ -164,6 +164,8 @@ h2 {
     justify-content: space-evenly;
     margin: 20px auto;
     width: 50%;
+    padding: none;
+    margin: none;
 }
 
 .button {
@@ -175,6 +177,7 @@ h2 {
     text-decoration: none;
     transition: background-color 0.3s ease;
     text-align: center;
+    width: 100%;
 }
 
 .CTA-buttons a:hover {
@@ -223,13 +226,15 @@ h3 {
 }
 
 .feature-card {
+  display: flex;
+  flex-direction: column;
   border: none;
   border-radius: 20px;
   padding: 40px 30px;
-  text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .feature-card.card-1 {
   background: linear-gradient(
@@ -302,7 +307,7 @@ h3 {
 
 .demo.wrapper {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 120px auto;
   text-align: center;
   justify-content: center;
 }
@@ -337,7 +342,10 @@ h3 {
   align-items: center;
   width: 100%;
   margin: 0 auto;
+}
 
+.pricing h3 {
+  margin: 30px 0;
 }
 
 .pricing-card {
@@ -413,6 +421,10 @@ h3 {
   color: #6741d9;
   font-weight: bold;
 
+}
+
+.problem-solution h3 {
+  margin-bottom: 70px;
 }
 
 .problem-solution {
@@ -616,11 +628,13 @@ footer a {
   margin: 1.5rem 2rem;
   padding: 0.5rem 1rem;
   background-color: #6036e94b;
-  color: #111111;
+  color: #555;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s;
+  border: none;
+
 }
 
 .btn-back:hover {
@@ -680,10 +694,6 @@ footer a {
 
 .FRQ.wrapper label:hover {
     background-color: #dedaf3;
-}
-
-.pricing.table h3 {
-  padding-bottom: 400px;
 }
 
 .pricing.table {
@@ -765,7 +775,7 @@ footer a {
 }
 
 .pricing.table h3 {
-  margin: 0 auto 70px auto;
+  margin: 70px auto 20px auto;
   font-weight: bold;
   font-size: 2.5rem;
   letter-spacing: 1.5px;
@@ -797,22 +807,45 @@ i {
 @media (max-width: 768px) {
   .problem-solution.wrapper {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 30px; 
+  }
 
   .problem-solution h3 {
     font-size: 1.75rem;
   }
 
-  .FRQ-title {
-    padding-bottom: 0px;
+  .CTA-buttons {
+    width: 100%;
   }
+
+  .features {
+    padding: 0 20px;
+  }
+
+  .pricing {
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  .problem-solution {
+    margin-top: 20px;
+  }
+
+  .problem-solution h3 {
+    margin: 40px;
+  }
+
+  .FRQ-title, .pricing.table h3 {
+    padding-bottom: 20px;
+  }
+
 }
 
 
 
 @media screen and (max-width: 1500px) {
 
-    .nav, #bar a, #dark-mode-toggle {
+    .nav, #bar a{
         font-size: 0.9rem;
     }
     
@@ -822,6 +855,7 @@ i {
 
     .pricing.wrapper {
       flex-direction: column;
+      padding: 0 20px;
     }
 
     .pricing-card.card-2 {
@@ -833,6 +867,13 @@ i {
     }
 }
 
+@media screen and (max-width: 1200px) {
+  #bar {
+      width: 80%;
+    }
+    
+}
+
 @media screen and (max-width: 1000px) {
     .hamburger {
         display: block;
@@ -841,6 +882,22 @@ i {
     .nav {
         display: none;
     }
+
+    .nav-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    color: #353434;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.966);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+    border-radius: 5px;
+}
 
     .logo-span {
         width: 50%;
@@ -870,4 +927,108 @@ i {
     #plan .plan {
       width: 100px;
     }
+
+  .newsletter-sign-up.wrapper {
+    padding-left: none;
+    padding-right: none;
+    margin-left: none;
+    margin-right: none;
+    width: 80%;
+    text-align: center;
+  }
+
+  /* General page padding */
+  body {
+    padding: 0 16px;
+    overflow-x: hidden;
+  }
+
+  /* Stack feature section */
+
+  .features h3 {
+    margin-bottom: 40px;
+  }
+
+  .features.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 0;
+  }
+
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .feature-card h4 {
+    margin-bottom: 0;
+  }
+
+  .pricing-card li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  /* Stack pricing plans vertically */
+  .pricing.table {
+    padding: 0;
+  }
+
+  .pricing.table table,
+  .pricing.table tbody,
+  .pricing.table tr,
+  .pricing.table td,
+  .pricing.table th {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: none;
+    margin: none;
+    align-content: center;
+  }
+
+
+  .pricing.table th {
+    background-color: #f0f4ff;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+  }
+
+  .pricing.table td {
+    border-bottom: 1px solid #eee;
+  }
+
+
+  /* Hide the plan labels if using them separately */
+  #plan {
+    display: none;
+  }
+
+  /* Prevent accidental scroll */
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .pricing {
+    padding: none;
+  }
+
+  .pricing-card {
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
 }
