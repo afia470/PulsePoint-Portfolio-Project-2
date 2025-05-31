@@ -802,6 +802,10 @@ i {
   .problem-solution h3 {
     font-size: 1.75rem;
   }
+
+  .FRQ-title {
+    padding-bottom: 0px;
+  }
 }
 
 
